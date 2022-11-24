@@ -1,10 +1,18 @@
-﻿namespace CalculatorProgram
+﻿using CalculatorProgram.ClockCalculations;
+using CalculatorProgram.Interfaces;
+
+namespace CalculatorProgram
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            RunProgram().Run();
+        }
+
+        public static ICalculatorProgram RunProgram()
+        {
+            return new ClockCalculatorProgram();
         }
     }
 }
