@@ -1,7 +1,7 @@
-﻿using CalculatorProgram.ClockCalculations.Interfaces;
+﻿using CalculatorProgram.Calculations.Interfaces;
 using CalculatorProgram.Interfaces;
 
-namespace CalculatorProgram.ClockCalculations
+namespace CalculatorProgram.Calculations
 {
     public class ClockCalculatorProgram : ICalculatorProgram
     {
@@ -19,23 +19,32 @@ namespace CalculatorProgram.ClockCalculations
 
             var isValidHours = false;
             var isValidMinutes = false;
+            var isQuitHit = false;
 
             do
             {
-                Console.Clear();
                 Console.WriteLine("Please enter current clock arrow hours:");
                 isValidHours = int.TryParse(Console.ReadLine(), out hours) && hours > 0 && hours <= 12;
 
                 if (isValidHours)
                 {
-                    Console.WriteLine("Please enter current clock arrow minutes:");
-                    isValidMinutes = int.TryParse(Console.ReadLine(), out minutes) && minutes > 0 && minutes <= 60;
+                    while (!isValidMinutes)
+                    {
+                        Console.WriteLine("Please enter current clock arrow minutes:");
+                        isValidMinutes = int.TryParse(Console.ReadLine(), out minutes) && minutes > 0 && minutes <= 60;
+                    }
+
+                    Console.Clear();
+                    Console.WriteLine($"Time: {FormatTime(hours, minutes)}\n" +
+                        $"Result: {_calculator.Calculate(hours, minutes)}\nQuit? [y/n]");
+
+                    isQuitHit = Console.ReadLine().Equals("y");
+                    isValidMinutes = false;
                 }
 
-            } while (!isValidHours || !isValidMinutes);
+            } while (!isQuitHit);
 
-            Console.WriteLine($"Time: {FormatTime(hours, minutes)}\n" +
-                $"Result: {_calculator.Calculate(hours, minutes)}");
+            Console.WriteLine("See ya!");
         }
 
         public string FormatTime(int hours, int minutes)

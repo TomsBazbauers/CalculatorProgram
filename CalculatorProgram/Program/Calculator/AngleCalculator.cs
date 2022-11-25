@@ -1,6 +1,6 @@
-﻿using CalculatorProgram.ClockCalculations.Interfaces;
+﻿using CalculatorProgram.Calculations.Interfaces;
 
-namespace CalculatorProgram.ClockCalculations.Calculator
+namespace CalculatorProgram.Calculations.Calculator
 {
     public class AngleCalculator : ICalculator
     {
@@ -13,7 +13,7 @@ namespace CalculatorProgram.ClockCalculations.Calculator
             var angleHours = _DegreesPerHour * hours + _HourArrowDegreesPerMinute * minutes;
             var angleMinutes = _DegreesPerMinute * minutes;
 
-            decimal result = angleHours - angleMinutes;
+            decimal result = Math.Abs(angleHours - angleMinutes);
 
             return 360 - result > result ? FormatResult(result) : FormatResult(360 - result);
         }

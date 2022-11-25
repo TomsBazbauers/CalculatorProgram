@@ -1,4 +1,4 @@
-﻿namespace CalculatorProgram.ClockCalculations.Interfaces
+﻿namespace CalculatorProgram.Calculations.Interfaces
 {
     public interface ICalculator
     {

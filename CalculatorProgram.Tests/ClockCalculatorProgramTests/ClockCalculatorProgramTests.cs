@@ -1,5 +1,5 @@
-﻿using CalculatorProgram.ClockCalculations;
-using CalculatorProgram.ClockCalculations.Calculator;
+﻿using CalculatorProgram.Calculations;
+using CalculatorProgram.Calculations.Calculator;
 using NUnit.Framework;
 
 namespace CalculatorProgram.Tests.ClockCalculatorProgramTests

@@ -1,5 +1,5 @@
-﻿using CalculatorProgram.ClockCalculations.Calculator;
-using CalculatorProgram.ClockCalculations.Interfaces;
+﻿using CalculatorProgram.Calculations.Calculator;
+using CalculatorProgram.Calculations.Interfaces;
 using NUnit.Framework;
 
 namespace CalculatorProgram.Tests.AngleCalculatorTests
@@ -22,7 +22,7 @@ namespace CalculatorProgram.Tests.AngleCalculatorTests
             // Arrange
             var hourAngle = 30 * hours + 0.5m * minutes;
             var minuteAngle = 6 * minutes;
-            var result = hourAngle - minuteAngle;
+            var result = Math.Abs(hourAngle - minuteAngle);
 
             decimal expectedResult = 360 - result > result ? result : 360 - result;
             var expectedFormat = string.Join("", expectedResult, "°");
