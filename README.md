@@ -2,7 +2,8 @@
 A simple console app that does calculations.
 
 ### Description:
-Calculations can be easily switched by changing the contents of the **Program** folder: 
+Calculations can be easily switched by changing the contents of the **Program** folder:
+
 Write a calculation class, implement the **ICalculatorProgram** interface and boom - you're good to go.
 
 ### Current program:
