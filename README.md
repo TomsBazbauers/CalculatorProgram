@@ -13,11 +13,11 @@ Currently it uses a simple formula to calculate the lesser angle between clock h
 
 First:
 ```
-Open **CalculatorProgram.sln** file
+Open CalculatorProgram.sln file
 ```
 Then:
 ```
-Choose **CalculatorProgram** in Startup Projects and click *Run*
+Choose CalculatorProgram in Startup Projects and click Run
 ```
 
 And then:
