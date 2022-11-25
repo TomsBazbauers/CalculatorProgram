@@ -1,12 +1,16 @@
-﻿using CalculatorProgram.ClockCalculations.Calculator;
-using CalculatorProgram.ClockCalculations.Interfaces;
+﻿using CalculatorProgram.ClockCalculations.Interfaces;
 using CalculatorProgram.Interfaces;
 
 namespace CalculatorProgram.ClockCalculations
 {
     public class ClockCalculatorProgram : ICalculatorProgram
     {
-        private readonly ICalculator _calculator = new AngleCalculator();
+        private readonly ICalculator _calculator;
+
+        public ClockCalculatorProgram(ICalculator calculator)
+        {
+            _calculator = calculator;
+        }
 
         public void Run()
         {

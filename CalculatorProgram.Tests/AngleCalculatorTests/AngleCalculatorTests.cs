@@ -1,7 +1,6 @@
 ﻿using CalculatorProgram.ClockCalculations.Calculator;
 using CalculatorProgram.ClockCalculations.Interfaces;
 using NUnit.Framework;
-using System.Globalization;
 
 namespace CalculatorProgram.Tests.AngleCalculatorTests
 {
@@ -18,7 +17,7 @@ namespace CalculatorProgram.Tests.AngleCalculatorTests
         [TestCase(1, 30)]
         [TestCase(5, 45)]
         [TestCase(11, 0)]
-        public void Calculate_InputValid_ReturnsCorrectResultInCorrectFormat(int hours, int minutes)
+        public void Calculate_InputValid_ReturnsCorrectResultCorrectFormat(int hours, int minutes)
         {
             // Arrange
             var hourAngle = 30 * hours + 0.5m * minutes;
@@ -33,13 +32,13 @@ namespace CalculatorProgram.Tests.AngleCalculatorTests
 
             // Assert
             Assert.IsInstanceOf<string>(actual);
-            Assert.That(actual, Is.EqualTo(expectedFormat));
             Assert.That(decimal.Parse(actual.Remove(actual.Length - 1)), Is.EqualTo(expectedResult));
+            Assert.That(actual, Is.EqualTo(expectedFormat));
         }
 
         [Test]
         [Repeat(20)]
-        public void FormatResult()
+        public void FormatResult_InputValid_ReturnsCorrectResultCorrectFormat()
         {
             // Arrange
             var testDecimal = (decimal)new Random().NextDouble();
@@ -50,8 +49,8 @@ namespace CalculatorProgram.Tests.AngleCalculatorTests
 
             // Assert
             Assert.IsInstanceOf<string>(actual);
-            Assert.That(actual, Is.EqualTo(expected));
             Assert.That(decimal.Parse(actual.Remove(actual.Length - 1)), Is.EqualTo(testDecimal));
+            Assert.That(actual, Is.EqualTo(expected));
         }
     }
 }

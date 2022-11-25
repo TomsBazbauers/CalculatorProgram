@@ -1,4 +1,5 @@
 ﻿using CalculatorProgram.ClockCalculations;
+using CalculatorProgram.ClockCalculations.Calculator;
 using CalculatorProgram.Interfaces;
 
 namespace CalculatorProgram
@@ -12,7 +13,7 @@ namespace CalculatorProgram
 
         public static ICalculatorProgram RunProgram()
         {
-            return new ClockCalculatorProgram();
+            return new ClockCalculatorProgram(new AngleCalculator());
         }
     }
 }
