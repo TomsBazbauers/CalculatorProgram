@@ -31,7 +31,7 @@ namespace CalculatorProgram.Calculations
                     while (!isValidMinutes)
                     {
                         Console.WriteLine("Please enter current clock arrow minutes:");
-                        isValidMinutes = int.TryParse(Console.ReadLine(), out minutes) && minutes > 0 && minutes <= 60;
+                        isValidMinutes = int.TryParse(Console.ReadLine(), out minutes) && minutes >= 0 && minutes <= 60;
                     }
 
                     Console.Clear();
